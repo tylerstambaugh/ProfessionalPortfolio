@@ -29,31 +29,27 @@ export default function Header() {
 
   return (
     <>
-      <Row>
-        <Col>
-          <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-            <Navbar.Brand href="#home" className="mr-auto">
-              Tyler Stambaugh
-            </Navbar.Brand>
-            <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-            <Navbar.Collapse id="responsive-navbar-nav">
-              <Nav className="ml-auto mx-2">
-                <Nav.Link href="./assets/documents/ResumeTylerJosephStambaugh.pdf">
-                  <FontAwesomeIcon icon={faFilePdf} size="2x" />
-                </Nav.Link>
-                {socials.map((item, index) => (
-                  <Nav.Link href={item.url}>
-                    <FontAwesomeIcon icon={item.icon} size="2x" />{" "}
-                  </Nav.Link>
-                ))}
-              </Nav>
-              <Nav>
-                <Nav.Link href="#login">Home</Nav.Link>
-              </Nav>
-            </Navbar.Collapse>
-          </Navbar>
-        </Col>
-      </Row>
+      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
+        <Navbar.Brand href="#home" className="mr-auto">
+          Tyler Stambaugh
+        </Navbar.Brand>
+        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+        <Navbar.Collapse id="responsive-navbar-nav">
+          <Nav className="ml-auto mx-2">
+            <Nav.Link href="./assets/documents/ResumeTylerJosephStambaugh.pdf">
+              <FontAwesomeIcon icon={faFilePdf} size="2x" />
+            </Nav.Link>
+            {socials.map((item, index) => (
+              <Nav.Link href={item.url}>
+                <FontAwesomeIcon icon={item.icon} size="2x" />{" "}
+              </Nav.Link>
+            ))}
+          </Nav>
+          <Nav>
+            <Nav.Link href="#login">Home</Nav.Link>
+          </Nav>
+        </Navbar.Collapse>
+      </Navbar>
     </>
   );
 }
