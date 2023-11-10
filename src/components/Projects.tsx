@@ -1,4 +1,6 @@
 import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import FullScreenSection from "./FullScreenSection";
 
 export default function Projects() {
   const projects = [
@@ -61,4 +63,20 @@ export default function Projects() {
       longDescription: "long description text goes here",
     },
   ];
+
+  return (
+    <>
+      <FullScreenSection
+        isDarkBackground
+        backgroundColor="#14532d"
+        id="projects"
+      >
+        <Container>
+          <Row>
+            <Col></Col>
+          </Row>
+        </Container>
+      </FullScreenSection>
+    </>
+  );
 }

@@ -1,11 +1,13 @@
-import React, { useEffect, useRef } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { LinkContainer } from "react-router-bootstrap";
-import { Col, Nav, Navbar, Row } from "react-bootstrap";
+import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
 import { faEnvelope, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
 import { faPuzzlePiece } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import "../App.css";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default function Header() {
   const socials = [
@@ -26,44 +28,86 @@ export default function Header() {
       url: "mailto: tyler.stambaugh@icloud.com",
     },
   ];
+  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+
+  useEffect(() => {
+    const handleResize = () => {
+      setIsCollapsed(window.innerWidth < 992); // Assuming 768px is the breakpoint for collapse
+      console.log("isCollapsed", isCollapsed);
+      console.log("window.innerWidth", window.innerWidth);
+    };
+    window.addEventListener("resize", handleResize);
+
+    handleResize(); // To set initial state on load
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   return (
     <>
-      <Navbar collapseOnSelect expand="lg" bg="dark" variant="dark">
-        <Navbar.Brand href="#home" className="mr-auto">
-          Tyler Stambaugh
-        </Navbar.Brand>
-        <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-        <Navbar.Collapse id="responsive-navbar-nav">
-          <Nav className="ml-auto mx-2">
-            <Nav.Link href="./assets/documents/ResumeTylerJosephStambaugh.pdf">
-              <FontAwesomeIcon icon={faFilePdf} size="2x" />
-            </Nav.Link>
-            {socials.map((item, index) => (
-              <Nav.Link href={item.url}>
-                <FontAwesomeIcon icon={item.icon} size="2x" />{" "}
-              </Nav.Link>
-            ))}
-          </Nav>
-          <Nav>
-            <Nav.Link href="#login">Home</Nav.Link>
-          </Nav>
-        </Navbar.Collapse>
+      <Navbar
+        collapseOnSelect
+        expand="lg"
+        bg="light"
+        variant="light"
+        sticky="top"
+      >
+        <Container>
+          <Navbar.Brand
+            href="#aboutMe"
+            className="navbar-brand-text justify-content-start"
+          >
+            Tyler Stambaugh
+          </Navbar.Brand>
+          <Navbar.Toggle aria-controls="responsive-navbar-nav" />
+          {!isCollapsed ? (
+            <>
+              <Navbar.Collapse
+                id="responsive-navbar-nav"
+                className="justify-content-center"
+              >
+                <Nav className="justify-content-center">
+                  <Nav.Link href="./assets/documents/ResumeTylerJosephStambaugh.pdf">
+                    <FontAwesomeIcon icon={faFilePdf} size="2x" />
+                  </Nav.Link>
+                  {socials.map((item, index) => (
+                    <Nav.Link href={item.url} key={index} target="blank">
+                      <FontAwesomeIcon icon={item.icon} size="2x" />
+                    </Nav.Link>
+                  ))}
+                </Nav>
+              </Navbar.Collapse>
+              <Nav className="justify-content-end ">
+                <Nav.Link href="#aboutMe">About</Nav.Link>
+                {" | "}
+                <Nav.Link href="#projects">Projects</Nav.Link>
+              </Nav>
+            </>
+          ) : (
+            <>
+              <Nav className="justify-content-end ">
+                <Nav.Link href="#aboutMe">About</Nav.Link>
+                {" | "}
+                <Nav.Link href="#projects">Projects</Nav.Link>
+              </Nav>
+              <Navbar.Collapse
+                id="responsive-navbar-nav"
+                className="justify-content-center"
+              >
+                <Nav className="justify-content-center">
+                  <Nav.Link href="./assets/documents/ResumeTylerJosephStambaugh.pdf">
+                    <FontAwesomeIcon icon={faFilePdf} size="2x" />
+                  </Nav.Link>
+                  {socials.map((item, index) => (
+                    <Nav.Link href={item.url} key={index} target="blank">
+                      <FontAwesomeIcon icon={item.icon} size="2x" />
+                    </Nav.Link>
+                  ))}
+                </Nav>
+              </Navbar.Collapse>
+            </>
+          )}
+        </Container>
       </Navbar>
     </>
   );
 }
-
-//   {/* Add a link for downloading your resume */}
-//   <a
-//     href="./assets/documents/ResumeTylerJosephStambaugh.pdf"
-//     download="ResumeTylerJosephStambaugh.pdf"
-//     style={{ marginRight: "15px" }}
-//   >
-//     <FontAwesomeIcon icon={faFilePdf} size="2x" />
-//   </a>
-//   {socials.map((item, index) => (
-//     <a key={index} href={item.url} style={{ marginRight: "15px" }}>
-//       {" "}
-//       <FontAwesomeIcon icon={item.icon} size="2x" />{" "}
-//     </a>
