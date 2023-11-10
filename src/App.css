@@ -1,8 +1,16 @@
 
 .navbar {
   position: fixed;
-  width: 100%;
-  z-index: 1000;
-  top: 0;
-  display: inline-flex;
+  padding-bottom: 56px;
+  width: 100%;  
+  display: grid;
+  font-size: xx-large ;
+}
+  .navbar-brand-text {  
+    font-size: 48px; 
+}
+
+.headshot {
+  width: 450px;
+  height: auto;
 }
