@@ -10,7 +10,12 @@
     font-size: 48px; 
 }
 
+.about-me-text {
+  font-size: 17px;
+  width:auto;
+  margin-bottom: 150px;
+}
+
 .headshot {
   width: 450px;
-  height: auto;
 }
