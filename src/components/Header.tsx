@@ -32,7 +32,7 @@ export default function Header() {
 
   useEffect(() => {
     const handleResize = () => {
-      setIsCollapsed(window.innerWidth < 992); // Assuming 768px is the breakpoint for collapse
+      setIsCollapsed(window.innerWidth < 992);
       console.log("isCollapsed", isCollapsed);
       console.log("window.innerWidth", window.innerWidth);
     };
@@ -52,12 +52,9 @@ export default function Header() {
         sticky="top"
       >
         <Container>
-          <Navbar.Brand
-            href="#aboutMe"
-            className="navbar-brand-text justify-content-start"
-          >
+          <Navbar.Text className="navbar-brand-text justify-content-start">
             Tyler Stambaugh
-          </Navbar.Brand>
+          </Navbar.Text>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
           {!isCollapsed ? (
             <>
