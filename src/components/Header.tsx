@@ -33,8 +33,8 @@ export default function Header() {
   useEffect(() => {
     const handleResize = () => {
       setIsCollapsed(window.innerWidth < 992);
-      console.log("isCollapsed", isCollapsed);
-      console.log("window.innerWidth", window.innerWidth);
+      // console.log("isCollapsed", isCollapsed);
+      // console.log("window.innerWidth", window.innerWidth);
     };
     window.addEventListener("resize", handleResize);
 
