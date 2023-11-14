@@ -2,61 +2,107 @@ import React, { useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { project } from "./Projects";
 
-export default function ProjectsRows(projects: project[]) {
+type projectRowprops = {
+  data: project[];
+};
+
+export default function ProjectsRows(props: projectRowprops) {
   const [showBack, setShowBack] = useState<{ [key: string]: boolean }>({});
   const toggleShowReverse = (projectId: string) => {
     setShowBack((prev) => ({ ...prev, [projectId]: !prev[projectId] }));
   };
 
-  const createRows = () => {
-    const rows = [];
-
-    {
-      for (let i = 0; i < projects.length; i += 2)
-        rows.push(
-          <Row>
-            <Col key={projects[i].id} md={5} lg={6} sm={12} xl={6} xxl={6}>
-              <Card>
-                <Card.Header>{projects[i].title}</Card.Header>
-                {showBack[projects[i].id] ? (
-                  <Card.Img variant="top" src={projects[i].imageSrc} />
+  return (
+    <Container fluid className="pt-3">
+      {/* Large screens (3 columns x 2 rows) */}
+      <Row className="d-none d-lg-flex pb-3 h-100">
+        {props.data.map((item) => (
+          <Col lg={4} key={item.id} className="projectCard h-100">
+            <Card>
+              <Card.Header className="cardHeader">{item.title}</Card.Header>
+              {!showBack[item.id] ? (
+                <Card.Img
+                  className="projectImage"
+                  variant="top"
+                  src={item.imageSrc}
+                />
+              ) : (
+                <></>
+              )}
+              <Card.Body>
+                {!showBack[item.id] ? (
+                  <Card.Text>{item.shortDescription}</Card.Text>
                 ) : (
-                  <></>
+                  <Card.Text>{item.longDescription}</Card.Text>
                 )}
-                <Card.Body>
-                  {showBack[projects[i].id] ? (
-                    <Card.Text>{projects[i].longDescription}</Card.Text>
-                  ) : (
-                    <Card.Text>{projects[i].shortDescription}</Card.Text>
-                  )}
-                </Card.Body>
-                <Button onClick={() => toggleShowReverse(projects[i].id)}>
-                  {showBack[projects[i].id] ? "More" : "Less"}
-                </Button>
-              </Card>
-            </Col>
-            {i + 1 < projects.length && (
-              <Col key={projects[i].id} md={5} lg={6} sm={12} xl={6} xxl={6}>
-                <Card>
-                  <Card.Header>{projects[i].title}</Card.Header>
-                  <Card.Img variant="top" src={projects[i].imageSrc} />
-                  <Card.Body>
-                    {showBack[projects[i].id] ? (
-                      <Card.Text>{projects[i].longDescription}</Card.Text>
-                    ) : (
-                      <Card.Text>{projects[i].shortDescription}</Card.Text>
-                    )}
-                  </Card.Body>
-                  <Button onClick={() => toggleShowReverse(projects[i].id)}>
-                    {showBack[projects[i].id] ? "More" : "Less"}
-                  </Button>
-                </Card>
-              </Col>
-            )}
-          </Row>
-        );
-    }
-    return rows;
-  };
-  return <>{createRows()}</>;
+              </Card.Body>
+              <Button onClick={() => toggleShowReverse(item.id)}>
+                {!showBack[item.id] ? "More" : "Less"}
+              </Button>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+
+      {/* Medium screens (2 columns x 3 rows) */}
+      <Row className="d-none d-md-flex d-lg-none pb-3 h-100">
+        {props.data.map((item) => (
+          <Col md={6} key={item.id} className="projectCard h-100">
+            <Card>
+              <Card.Header className="cardHeader">{item.title}</Card.Header>
+              {!showBack[item.id] ? (
+                <Card.Img
+                  className="projectImage"
+                  variant="top"
+                  src={item.imageSrc}
+                />
+              ) : (
+                <></>
+              )}
+              <Card.Body>
+                {!showBack[item.id] ? (
+                  <Card.Text>{item.shortDescription}</Card.Text>
+                ) : (
+                  <Card.Text>{item.longDescription}</Card.Text>
+                )}
+              </Card.Body>
+              <Button onClick={() => toggleShowReverse(item.id)}>
+                {!showBack[item.id] ? "More" : "Less"}
+              </Button>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+
+      {/* Small screens (1 column x 6 rows) */}
+      <Row className="d-flex d-md-none pb-3 h-100">
+        {props.data.map((item) => (
+          <Col key={item.id} className="projectCard h-100">
+            <Card>
+              <Card.Header className="cardHeader">{item.title}</Card.Header>
+              {!showBack[item.id] ? (
+                <Card.Img
+                  className="projectImage"
+                  variant="top"
+                  src={item.imageSrc}
+                />
+              ) : (
+                <></>
+              )}
+              <Card.Body>
+                {!showBack[item.id] ? (
+                  <Card.Text>{item.shortDescription}</Card.Text>
+                ) : (
+                  <Card.Text>{item.longDescription}</Card.Text>
+                )}
+              </Card.Body>
+              <Button onClick={() => toggleShowReverse(item.id)}>
+                {!showBack[item.id] ? "More" : "Less"}
+              </Button>
+            </Card>
+          </Col>
+        ))}
+      </Row>
+    </Container>
+  );
 }

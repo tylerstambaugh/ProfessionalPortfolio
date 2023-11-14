@@ -19,3 +19,20 @@
 .headshot {
   width: 450px;
 }
+
+.proejctImage {
+  width: 350px;
+  height: 350px;
+}
+
+.cardHeader {
+  background-color: grey;
+  font-size: x-large;
+  font-weight: 600;
+  align-items: center;
+  justify-items: center;
+}
+
+.projectCard {
+  height: 600px;
+}

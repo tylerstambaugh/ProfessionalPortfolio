@@ -21,7 +21,7 @@ export default function FullScreenSection(props: FullScreenSectionProps) {
     <Stack
       id={id}
       color={isDarkBackground ? "white" : "black"}
-      className="justify-content-center align-items-center vh-100"
+      className="justify-content-center align-items-center"
       style={sectionStyle}
     >
       {children}
