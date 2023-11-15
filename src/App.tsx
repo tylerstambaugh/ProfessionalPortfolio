@@ -17,5 +17,7 @@ function App() {
     </>
   );
 }
-
+{
+  basename: "/ProfessionalPortfolio";
+}
 export default App;
