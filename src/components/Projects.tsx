@@ -3,7 +3,7 @@ import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import FullScreenSection from "./FullScreenSection";
 import { v4 as uuidv4 } from "uuid";
 import segmentSniperImg from "../assets/images/segmentSniperScreenshot.png";
-import efaImage from "../assets/images/efa.png";
+import efaImage from "../assets/images/efa2.png";
 import mkKupSkorerImage from "../assets/images/mkKupSkorer.png";
 import exercismImage from "../assets/images/exercismScreenshot.png";
 import reactPortfolioImage from "../assets/images/reactPortfolioImg.png";
@@ -94,13 +94,13 @@ export const projects: project[] = [
     longDescription: `I was turned onto this site when taking the software development course at Eleven Fifty Academy. I still frequent it, and Leetcode, to 
     challenge myself and continue to learn the features of the c# and Javascript languages (primarily). I may never need to implement a binary search algorithm, but having
     done it before makes me appreciate even more the tools and libraries we have at our disposal. And who knows, maybe I'll end up working 
-    on an embedded system where resources are at a premium and need to use bitwise operations to meet the constraint of the environment.`,
+    on an embedded system where resources are at a premium and need to use bitwise operations to meet the constraints of the environment.`,
   },
   {
     id: uuidv4(),
-    title: "Coming Soon... Virtual Boon",
+    title: "Coming Soon... Virtual Boone",
     shortDescription:
-      "I'm currently working on learning some A.I. fundamentals and am modeling a chatbot named after my dog Boone. .",
+      "I'm currently working on learning A.I. fundamentals and am modeling a chatbot named after my dog Boone.",
     imageSrc: virtualBooneImage,
     longDescription: "Check back soon for more updates.",
   },
@@ -111,8 +111,9 @@ export default function Projects() {
     <>
       <FullScreenSection
         isDarkBackground
-        backgroundColor="#14532d"
+        backgroundColor="#0e3c22"
         id="projects"
+        fullScreen={false}
       >
         <Container>
           <ProjectsRows data={projects} />

@@ -1,29 +1,32 @@
 import FullScreenSection from "./FullScreenSection";
 import Headshot from "../assets/images/headshot_sized.png";
-import { Col, Container, Row, Stack, Image } from "react-bootstrap";
-import "../App.css";
+import { Col, Container, Row, Image } from "react-bootstrap";
 
 const greeting = "Howdy, I am Tyler!";
-const bio1 =
-  "Born and raised in Indiana, my interest in technology developed early when I got a used Commodore 64 from a garage sale and began interacting with a terminal. The hobby grew into a passion while I attended Indiana University, getting a B.S. in Informatics. My professional career started by answering phones, providing tech support for a a client-server application where I cut my teeth working with databases and getting exposed to the SDLC. Since then I've steadily progressed my way through the landscape, having currently established myself as Software Engineer, primarily focused on .Net and React projects. To grow my capabilities I spent over 600 hours of course instruction and self study to graduate from Eleven Fifty Academy's Software Development Course. Now I'm continuing to grow my tool set and hone my skills working on my own full stack application in my free time. I look forward to continuing my understanding of process automation and software engineering in order to make positive impacts for the organizations that I'm a part of.";
+const bio1 = `Indiana native with an early tech spark – my journey kicked off with a garage sale gem, a Commodore 64, sparking a lifelong love for technology. 
+   While at Indiana University, I earned a B.S. in Informatics, delving into the tech landscape. I began my professional career in tech support, working with 
+   client-server applications and databases. Over time, I progressed to become a Software Engineer, specializing in .Net and React projects. To further my skills, 
+   I completed over 600 hours of coursework at Eleven Fifty Academy. In my free time, I'm working on a full-stack application.  Eager to explore process automation and enhance my software engineering prowess,
+    I strive to make meaningful impacts in every organization I'm part of.  Explore some of my projects below.`;
 
 export default function AboutMe() {
   return (
     <>
       <FullScreenSection
         isDarkBackground
-        backgroundColor="#2A4365"
+        fullScreen={true}
+        backgroundColor="#1c3149"
         id="aboutMe"
       >
         <Container className="justify-content-center">
           <Row className="headshot pb-2 mx-auto">
             <Image src={Headshot} roundedCircle={true} />
           </Row>
-          <Row>{greeting}</Row>
+          <Row className="text-center">
+            <Col className=" about-me-greeting">{greeting}</Col>
+          </Row>
           <Row>
-            <Col className="about-me-text" lg={12}>
-              {bio1}
-            </Col>
+            <Col className="about-me-text">{bio1}</Col>
           </Row>
         </Container>
       </FullScreenSection>
