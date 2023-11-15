@@ -8,12 +8,10 @@ import "bootstrap/dist/css/bootstrap.min.css";
 function App() {
   return (
     <>
-      <main>
-        <Header />
-        <AboutMe />
-        <Projects />
-        <Footer />
-      </main>
+      <Header />
+      <AboutMe />
+      <Projects />
+      <Footer />
     </>
   );
 }
