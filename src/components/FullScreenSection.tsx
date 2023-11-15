@@ -11,8 +11,7 @@ export type FullScreenSectionProps = {
 };
 
 export default function FullScreenSection(props: FullScreenSectionProps) {
-  const { isDarkBackground, backgroundColor, id, children, ...otherProps } =
-    props;
+  const { isDarkBackground, id, children } = props;
   const sectionStyle = {
     color: props.isDarkBackground ? "white" : "black",
     backgroundColor: props.backgroundColor,

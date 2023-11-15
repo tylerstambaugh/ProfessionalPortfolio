@@ -1,5 +1,4 @@
-import React, { useEffect, useState } from "react";
-import { Button, Card, Col, Container, Row } from "react-bootstrap";
+import { Container } from "react-bootstrap";
 import FullScreenSection from "./FullScreenSection";
 import { v4 as uuidv4 } from "uuid";
 import segmentSniperImg from "../assets/images/segmentSniperScreenshot.png";
