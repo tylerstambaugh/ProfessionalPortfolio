@@ -1,6 +1,5 @@
-import React, { useEffect, useRef, useState } from "react";
-import { LinkContainer } from "react-router-bootstrap";
-import { Col, Container, Nav, Navbar, Row } from "react-bootstrap";
+import { useEffect, useState } from "react";
+import { Container, Nav, Navbar } from "react-bootstrap";
 import { faEnvelope, faFilePdf } from "@fortawesome/free-solid-svg-icons";
 import { faGithub, faLinkedin } from "@fortawesome/free-brands-svg-icons";
 
