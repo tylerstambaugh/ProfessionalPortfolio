@@ -50,6 +50,7 @@ export default function Header() {
         bg="light"
         variant="light"
         sticky="top"
+        className=""
       >
         <Container>
           <Navbar.Text className="navbar-brand-text justify-content-start">
@@ -73,7 +74,7 @@ export default function Header() {
                   ))}
                 </Nav>
               </Navbar.Collapse>
-              <Nav className="justify-content-end ">
+              <Nav className="justify-content-end">
                 <Nav.Link href="#aboutMe">About</Nav.Link>
                 {" | "}
                 <Nav.Link href="#projects">Projects</Nav.Link>

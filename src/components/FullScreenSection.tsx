@@ -4,6 +4,7 @@ import { Stack } from "react-bootstrap";
 export type FullScreenSectionProps = {
   isDarkBackground: boolean;
   backgroundColor: string;
+  fullScreen: boolean;
   id: string;
   children: React.ReactNode;
   [key: string]: any;
@@ -21,7 +22,9 @@ export default function FullScreenSection(props: FullScreenSectionProps) {
     <Stack
       id={id}
       color={isDarkBackground ? "white" : "black"}
-      className="justify-content-center align-items-center"
+      className={`justify-content-center align-items-center ${
+        props.fullScreen ? "vh-100" : ""
+      }`}
       style={sectionStyle}
     >
       {children}

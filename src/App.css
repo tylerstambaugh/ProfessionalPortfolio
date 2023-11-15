@@ -9,6 +9,9 @@
   .navbar-brand-text {  
     font-size: 48px; 
 }
+.about-me-greeting {
+  font-size: 23;
+}
 
 .about-me-text {
   font-size: 17px;
@@ -20,10 +23,6 @@
   width: 450px;
 }
 
-.proejctImage {
-  width: 350px;
-  height: 350px;
-}
 
 .cardHeader {
   background-color: grey;
