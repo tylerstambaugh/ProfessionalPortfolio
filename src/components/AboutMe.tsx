@@ -6,7 +6,7 @@ const greeting = "Howdy, I am Tyler!";
 const bio1 = `Indiana native with a passion for technology and learning. My journey kicked off with a garage sale gem, a Commodore 64, sparking a lifelong interest in computers. 
    While at Indiana University, I earned a B.S. in Informatics, delving into the tech landscape. I began my professional career in tech support, working with 
    client-server applications and databases. Over time, I progressed to become a Software Engineer, specializing in .Net and React projects. To further my skills, 
-   I completed over 600 hours of coursework at Eleven Fifty Academy. In my free time, I'm working on a full-stack application.  Eager to explore process automation and enhance my software engineering prowess,
+   I completed over 600 hours of coursework at Eleven Fifty Academy. In my free time, I'm working on my own full-stack application integrating with the Strava API.  Eager to explore process automation and enhance my software engineering prowess,
     I strive to make meaningful impacts in every organization I'm part of.  Explore some of my projects below.`;
 
 export default function AboutMe() {
