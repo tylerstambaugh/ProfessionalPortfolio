@@ -92,7 +92,7 @@ export default function Header() {
               >
                 <Nav className="justify-content-center">
                   <Nav.Link
-                    href="./assets/documents/ResumeTylerJosephStambaugh.pdf"
+                    href="../../public/documents/ResumeTylerStambaugh.pdf"
                     download
                   >
                     <FontAwesomeIcon icon={faFilePdf} size="2x" />
