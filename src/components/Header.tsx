@@ -91,7 +91,10 @@ export default function Header() {
                 className="justify-content-center"
               >
                 <Nav className="justify-content-center">
-                  <Nav.Link href="./assets/documents/ResumeTylerJosephStambaugh.pdf">
+                  <Nav.Link
+                    href="./assets/documents/ResumeTylerJosephStambaugh.pdf"
+                    download
+                  >
                     <FontAwesomeIcon icon={faFilePdf} size="2x" />
                   </Nav.Link>
                   {socials.map((item, index) => (
