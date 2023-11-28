@@ -63,7 +63,7 @@ export default function Header() {
                 className="justify-content-center"
               >
                 <Nav className="justify-content-center">
-                  <Nav.Link href="./assets/documents/ResumeTylerJosephStambaugh.pdf">
+                  <Nav.Link href="/documents/ResumeTylerStambaugh.pdf">
                     <FontAwesomeIcon icon={faFilePdf} size="2x" />
                   </Nav.Link>
                   {socials.map((item, index) => (
@@ -91,10 +91,7 @@ export default function Header() {
                 className="justify-content-center"
               >
                 <Nav className="justify-content-center">
-                  <Nav.Link
-                    href="../../public/documents/ResumeTylerStambaugh.pdf"
-                    download
-                  >
+                  <Nav.Link href="/documents/ResumeTylerStambaugh.pdf" download>
                     <FontAwesomeIcon icon={faFilePdf} size="2x" />
                   </Nav.Link>
                   {socials.map((item, index) => (
