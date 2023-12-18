@@ -27,88 +27,66 @@ export default function Header() {
       url: "mailto: tyler.stambaugh@icloud.com",
     },
   ];
-  const [isCollapsed, setIsCollapsed] = useState<boolean>(false);
+
+  const [windowWidth, setWindowWidth] = useState(window.innerWidth);
 
   useEffect(() => {
     const handleResize = () => {
-      setIsCollapsed(window.innerWidth < 992);
-      // console.log("isCollapsed", isCollapsed);
-      // console.log("window.innerWidth", window.innerWidth);
+      setWindowWidth(window.innerWidth);
     };
+
     window.addEventListener("resize", handleResize);
 
-    handleResize(); // To set initial state on load
-    return () => window.removeEventListener("resize", handleResize);
+    return () => {
+      window.removeEventListener("resize", handleResize);
+    };
   }, []);
 
+  const faIconSize = windowWidth < 350 ? "1x" : "2x";
+  const navbarBrandTextSize = windowWidth < 440 ? "small-text" : "";
   return (
     <>
       <Navbar
         collapseOnSelect
+        sticky="top"
         expand="lg"
         bg="light"
         variant="light"
-        sticky="top"
         className=""
       >
         <Container>
-          <Navbar.Text className="navbar-brand-text justify-content-start">
+          <Navbar.Text
+            className={`navbar-brand-text justify-content-start ${navbarBrandTextSize}`}
+          >
             Tyler Stambaugh
           </Navbar.Text>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
-          {!isCollapsed ? (
-            <>
-              <Navbar.Collapse
-                id="responsive-navbar-nav"
-                className="justify-content-center"
-              >
-                <Nav className="justify-content-center">
+          <>
+            <Navbar.Collapse
+              id="responsive-navbar-nav"
+              className="justify-content-center"
+            >
+              <Nav className="d-flex flex-row justify-content-around">
+                <Nav.Link
+                  href="./documents/ResumeTylerStambaugh.pdf"
+                  target="blank"
+                  className="mr-2"
+                >
+                  <FontAwesomeIcon icon={faFilePdf} size={faIconSize} />
+                </Nav.Link>
+                {socials.map((item, index) => (
                   <Nav.Link
-                    href="./documents/ResumeTylerStambaugh.pdf"
+                    href={item.url}
+                    key={index}
                     target="blank"
+                    className="mr-2"
                   >
-                    <FontAwesomeIcon icon={faFilePdf} size="2x" />
+                    <FontAwesomeIcon icon={item.icon} size={faIconSize} />
                   </Nav.Link>
-                  {socials.map((item, index) => (
-                    <Nav.Link href={item.url} key={index} target="blank">
-                      <FontAwesomeIcon icon={item.icon} size="2x" />
-                    </Nav.Link>
-                  ))}
-                </Nav>
-              </Navbar.Collapse>
-              <Nav className="justify-content-end">
-                <Nav.Link href="#aboutMe">About</Nav.Link>
-                {" | "}
-                <Nav.Link href="#projects">Projects</Nav.Link>
+                ))}
               </Nav>
-            </>
-          ) : (
-            <>
-              <Nav className="justify-content-end ">
-                <Nav.Link href="#aboutMe">About</Nav.Link>
-                {" | "}
-                <Nav.Link href="#projects">Projects</Nav.Link>
-              </Nav>
-              <Navbar.Collapse
-                id="responsive-navbar-nav"
-                className="justify-content-center"
-              >
-                <Nav className="justify-content-center">
-                  <Nav.Link
-                    href="./documents/ResumeTylerStambaugh.pdf"
-                    target="blank"
-                  >
-                    <FontAwesomeIcon icon={faFilePdf} size="2x" />
-                  </Nav.Link>
-                  {socials.map((item, index) => (
-                    <Nav.Link href={item.url} key={index} target="blank">
-                      <FontAwesomeIcon icon={item.icon} size="2x" />
-                    </Nav.Link>
-                  ))}
-                </Nav>
-              </Navbar.Collapse>
-            </>
-          )}
+            </Navbar.Collapse>
+          </>
         </Container>
       </Navbar>
     </>

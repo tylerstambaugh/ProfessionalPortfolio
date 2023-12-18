@@ -23,6 +23,14 @@
   width: 400px;
 }
 
+.small-headshot {
+  width: 200px;
+}
+
+.small-text {
+  font-size: 23px; 
+}
+
 
 .cardHeader {
   background-color: grey;
