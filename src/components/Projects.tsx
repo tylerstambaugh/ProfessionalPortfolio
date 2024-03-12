@@ -23,8 +23,23 @@ export const projects: project[] = [
     id: uuidv4(),
     url: "https://github.com/tylerstambaugh/SegmentSniper",
     title: "Segment Sniper",
-    shortDescription:
-      "A .Net Web API / React project that integrates with the Strava open API to allow athletes to analyze workout data efficiently.",
+    shortDescription: (
+      <>
+        <p>
+          A .Net Web API / React project that integrates with the Strava open
+          API to allow athletes to analyze workout data efficiently.
+        </p>
+        <p>
+          The project is hosted in Azure, and the beta version is accessible{" "}
+          <a
+            href="https://as-segmentsniper-frontend-eastus-dev.azurewebsites.net/#/"
+            target="_blank"
+          >
+            here
+          </a>
+        </p>
+      </>
+    ),
     imageSrc: segmentSniperImg,
     longDescription: (
       <>
