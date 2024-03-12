@@ -15,11 +15,13 @@ export type project = {
   shortDescription: string | JSX.Element;
   longDescription: string | JSX.Element;
   imageSrc: any;
+  url?: string | null;
 };
 
 export const projects: project[] = [
   {
     id: uuidv4(),
+    url: "https://github.com/tylerstambaugh/SegmentSniper",
     title: "Segment Sniper",
     shortDescription:
       "A .Net Web API / React project that integrates with the Strava open API to allow athletes to analyze workout data efficiently.",
@@ -60,6 +62,7 @@ export const projects: project[] = [
   },
   {
     id: uuidv4(),
+    url: "https://github.com/tylerstambaugh/MK_KupSkorer",
     title: "Mario Kart Kup Skorer",
     shortDescription:
       "A .Net Web API / MVC application used to solve the real world problems of tracking Mario Kart Kup scoring across game sessions.",
@@ -81,6 +84,7 @@ export const projects: project[] = [
   },
   {
     id: uuidv4(),
+    url: "https://exercism.org/tracks/csharp",
     title: "Exercism-ing",
     shortDescription: (
       <span>

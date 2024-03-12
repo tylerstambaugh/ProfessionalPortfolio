@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { Button, Card, Col, Container, Row } from "react-bootstrap";
 import { project } from "./Projects";
+import Zoom from "react-medium-image-zoom";
+import "react-medium-image-zoom/dist/styles.css";
+import { Link } from "react-router-dom";
 
 type projectRowprops = {
   data: project[];
@@ -18,13 +21,23 @@ export default function ProjectsRows(props: projectRowprops) {
         {props.data.map((item) => (
           <Col className="d-flex">
             <Card className="w-100">
-              <Card.Header className="cardHeader">{item.title}</Card.Header>
+              <Card.Header className="cardHeader">
+                {item.url ? (
+                  <a href={item.url} target="_blank">
+                    {item.title}
+                  </a>
+                ) : (
+                  item.title
+                )}
+              </Card.Header>
               {!showBack[item.id] ? (
-                <Card.Img
-                  className="projectImage"
-                  variant="top"
-                  src={item.imageSrc}
-                />
+                <Zoom zoomMargin={2}>
+                  <Card.Img
+                    className="projectImage"
+                    variant="top"
+                    src={item.imageSrc}
+                  />
+                </Zoom>
               ) : (
                 <></>
               )}
