@@ -26,8 +26,8 @@ export const projects: project[] = [
     shortDescription: (
       <>
         <p>
-          A .Net Web API / React project that integrates with the Strava open
-          API to allow athletes to analyze workout data efficiently.
+          A .Net Web API / React project that integrates with Strava's API to
+          allow athletes to analyze workout data efficiently.
         </p>
         <p>
           The project is hosted in Azure, and the beta version is accessible{" "}
@@ -44,7 +44,7 @@ export const projects: project[] = [
     longDescription: (
       <>
         <p>
-          I've been an bicycle racer for many years and have user Strava to
+          I've been an bicycle racer for many years and have used Strava to
           track my performance. When I got into writing software and found out
           that they had an open API, I began writing a companion app to automate
           a routine data analysis task.
