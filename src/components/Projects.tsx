@@ -7,6 +7,7 @@ import mkKupSkorerImage from "../assets/images/mkKupSkorer.png";
 import exercismImage from "../assets/images/exercismScreenshot.png";
 import reactPortfolioImage from "../assets/images/reactPortfolioImg.png";
 import virtualBooneImage from "../assets/images/virtualBoone.png";
+import stravaWeekInBikeImage from "../assets/images/stravaWeekInBike.png";
 import ProjectsRows from "./ProjectsRows";
 
 export type project = {
@@ -67,6 +68,7 @@ export const projects: project[] = [
   },
   {
     id: uuidv4(),
+    url: "https://www.elevenfifty.org/courses/software-development",
     title: "Eleven Fifty Academy",
     shortDescription: `In May of 2022 I completed Eleven Fifty Academy's Software Development Course.`,
     imageSrc: efaImage,
@@ -88,14 +90,20 @@ export const projects: project[] = [
   },
   {
     id: uuidv4(),
-    title: "This React Portfolio",
-    shortDescription:
-      "Who can't appreciate a little self reflection? I created this SPA using Vite React with state management and hooks.",
-    imageSrc: reactPortfolioImage,
-    longDescription: `I've been working with React professionally since 2022. I think it is a great 
-    front-end javascript library that makes developing rich user
-     interfaces a lot easier than using jQuery.
-     The strong community, wealth of resources and additional libraries make it a no-brainer for use with SPAs.`,
+    url: "https://github.com/tylerstambaugh/MMM-StravaWeekInBike",
+    title: "Strava Week in Bike",
+    shortDescription: (
+      <span>
+        A few years ago, with an old display and some one way mirror, I built a{" "}
+        <a href="https://magicmirror.builders/">magic mirror </a>
+        to hang in my house. Recently I wrote a module to display my weekly
+        Strava bike stats.
+      </span>
+    ),
+    imageSrc: stravaWeekInBikeImage,
+    longDescription: `The Magic Mirror is an open source project that allows you to build a smart mirror that displays information like the weather, news, and calendar events. 
+    I wrote a module that displays my weekly bike stats from Strava. 
+    It was a fun project that allowed me to learn more about the Strava API and how to write a module for the Magic Mirror.`,
   },
   {
     id: uuidv4(),
