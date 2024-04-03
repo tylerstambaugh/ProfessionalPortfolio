@@ -5,7 +5,6 @@ import segmentSniperImg from "../assets/images/segmentSniperScreenshot.png";
 import efaImage from "../assets/images/efa2.png";
 import mkKupSkorerImage from "../assets/images/mkKupSkorer.png";
 import exercismImage from "../assets/images/exercismScreenshot.png";
-import reactPortfolioImage from "../assets/images/reactPortfolioImg.png";
 import virtualBooneImage from "../assets/images/virtualBoone.png";
 import stravaWeekInBikeImage from "../assets/images/stravaWeekInBike.png";
 import ProjectsRows from "./ProjectsRows";
