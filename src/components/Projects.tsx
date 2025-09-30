@@ -32,7 +32,7 @@ export const projects: project[] = [
         <p>
           The project is hosted in Azure, and the beta version is accessible{" "}
           <a
-            href="https://as-segmentsniper-frontend-eastus-dev.azurewebsites.net/#/"
+            href="https://www.segmentsniper.com"
             target="_blank"
           >
             here
