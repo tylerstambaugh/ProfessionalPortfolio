@@ -3,19 +3,18 @@ import Header from "./components/Header";
 import AboutMe from "./components/AboutMe";
 import Projects from "./components/Projects";
 import Footer from "./components/Footer";
-import "bootstrap/dist/css/bootstrap.min.css";
 
 function App() {
   return (
-    <>
+    <div className="app">
       <Header />
-      <AboutMe />
-      <Projects />
+      <main>
+        <AboutMe />
+        <Projects />
+      </main>
       <Footer />
-    </>
+    </div>
   );
 }
-{
-  basename: "/ProfessionalPortfolio";
-}
+
 export default App;
